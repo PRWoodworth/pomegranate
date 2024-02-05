@@ -9,19 +9,20 @@ import './App.css';
 import Home from './Pages/Home';
 import About from  './Pages/About';
 import Contact from  './Pages/Contact';
-import Layout from './Layout'
+import Navbar from "./Components/Navbar";
 
 
 function App() {
   return (
     <div className = "App">
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route index element={<Home/>}/>
-          <Route path="About" element={<About/>}/>
-          <Route path="Contact" element={<Contact/>}/>
-        </Route>
-      </Routes>
+      <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/Contact" element={<Contact />} />
+            </Routes>
+        </Router>
     </div>  
   );
 }
